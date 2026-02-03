@@ -28,11 +28,19 @@ else
   echo "✅ Git already installed"
 fi
 
-# 3. Install Cursor CLI
+# 3. Install GitHub CLI (gh) if not present
+if ! command -v gh &>/dev/null; then
+  echo "📦 Installing GitHub CLI (gh)..."
+  brew install gh
+else
+  echo "✅ GitHub CLI (gh) already installed"
+fi
+
+# 4. Install Cursor CLI
 echo "📦 Installing Cursor CLI..."
 curl -sSf https://cursor.com/install | bash
 
-# 4. Ensure ~/.local/bin is in PATH
+# 5. Ensure ~/.local/bin is in PATH
 grep -q '.local/bin' ~/.zshrc 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 export PATH="$HOME/.local/bin:$PATH"
 
