@@ -1,3 +1,7 @@
+# Step 1 move this file to your desktop and run the following command:
+# Step 2 open terminal (either in cursor or cmd + space and type terminal)
+# Step 3 paste the following command and press enter: cd ~/Desktop && bash setup-cursor-agent.sh
+
 #!/bin/bash
 set -e
 
